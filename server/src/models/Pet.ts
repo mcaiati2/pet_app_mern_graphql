@@ -13,6 +13,7 @@ const petSchema = new Schema({
   },
   age: {
     type: Number,
+    mim: [1, 'You must enter an age greater than zero'],
     required: [true, 'You must provide the animal\'s age']
   },
   owner: {

@@ -4,10 +4,15 @@ import { useMutation } from '@apollo/client';
 
 import { useStore } from '../store';
 import { LOGOUT_USER } from '../graphql/mutations';
+import { client } from '../main';
 
 function Header() {
-  const {state, setState} = useStore()!;
-  const [logoutUser] = useMutation(LOGOUT_USER);
+  const { state, setState } = useStore()!;
+  const [logoutUser] = useMutation(LOGOUT_USER, {
+    onCompleted() {
+      client.clearStore(); // triggers client to clear your cache out 
+    }
+  });
   const navigate = useNavigate();
 
   const handleLogout = async (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -45,7 +50,7 @@ function Header() {
               <Nav.Link as={NavLink} to="/login">Log In</Nav.Link>
             </>
           )}
-        
+
         </Nav>
       </Container>
     </Navbar>

@@ -3,10 +3,12 @@ const { Schema, model } = mongoose;
 const postSchema = new Schema({
     title: {
         type: String,
+        required: [true, 'You must provide a post title'],
         minLength: [3, 'Your post title must be at least 3 characters in length']
     },
     body: {
         type: String,
+        required: [true, 'You must provide a post title'],
         minLength: [3, 'Your post body must be at least 3 characters in length']
     },
     pet: {

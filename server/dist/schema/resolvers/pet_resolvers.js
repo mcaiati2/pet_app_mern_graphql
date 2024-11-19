@@ -1,6 +1,7 @@
 import Pet from '../../models/Pet.js';
 import Post from '../../models/Post.js';
 import { errorHandler } from '../helpers/index.js';
+import { GraphQLError } from 'graphql';
 const pet_resolvers = {
     Query: {
         // Get all posts
@@ -48,7 +49,8 @@ const pet_resolvers = {
                 };
             }
             catch (error) {
-                return errorHandler(error);
+                const errorMessage = errorHandler(error);
+                throw new GraphQLError(errorMessage);
             }
         },
         // Create a post for a pet
@@ -70,7 +72,8 @@ const pet_resolvers = {
                 };
             }
             catch (error) {
-                return errorHandler(error);
+                const errorMessage = errorHandler(error);
+                throw new GraphQLError(errorMessage);
             }
         }
     }

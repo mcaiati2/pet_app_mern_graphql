@@ -6,10 +6,9 @@ import Footer from './components/Footer';
 import ProtectRoute from './components/ProtectRoute';
 
 import AuthForm from './pages/AuthForm';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard/index';
 import Landing from './pages/Landing';
 import PetForm from './pages/PetForm';
-import PostForm from './pages/PostForm';
 
 function App() {
   const {state} = useStore()!;
@@ -44,12 +43,6 @@ function App() {
               <PetForm />
             </ProtectRoute>
           )} />
-          <Route path="/post" element={(
-            <ProtectRoute>
-              <PostForm />
-            </ProtectRoute>
-          )} />
-
           <Route path="/dashboard" element={(
             <ProtectRoute>
               <Dashboard />
