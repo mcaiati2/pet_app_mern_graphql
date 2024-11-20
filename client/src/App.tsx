@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import ProtectRoute from './components/ProtectRoute';
 
 import AuthForm from './pages/AuthForm';
-import Dashboard from './pages/Dashboard/index';
+import Dashboard from './pages/Dashboard/components/index';
 import Landing from './pages/Landing';
 import PetForm from './pages/PetForm';
 

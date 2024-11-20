@@ -18,7 +18,7 @@ function Landing() {
       </Row>
 
       <Container>
-        <h3 className="fw-light mt-5">See what pets are saying!</h3>
+        <h3 data-hero-header className="fw-light mt-5">See what pets are saying!</h3>
         <hr />
 
         {postData && !postData.getAllPosts.length && (
